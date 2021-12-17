@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <script>
+            function hitungParkir(){
+                let jam_masuk = document.getElementById("masuk").value;
+                let jam_keluar = document.getElementById("keluar").value;
+                let selisih = jam_keluar - jam_masuk;
+                let biaya = 0;
+                const TARIF_AWAL = 3000;
+                const TARIF_AKHIR = 1000; //perjam berikutnya
+                if(selisih <= 2){
+                    biaya = TARIF_AWAL;
+                }else{
+                    let tambahan_jam = selisih - 2;
+                    biaya = TARIF_AWAL + (TARIF_PERJAM * tambahan_jam);
+                }
+                let area_biaya = document.getElementById("biaya");
+                area_biaya.innerHTML = "BIAYA PARKIR" + biaya;
+            }
+        </script>
+        <title>Biaya Parkir</title>
+        <style>
+            body{
+                background-color: palevioletred;
+                padding: 200px;
+            }
+            .atas{
+                background-color: lightpink;
+                border: solid darkmagenta 2px;
+                border-radius: 20px;
+                padding: 30px;
+            }
+            h1{
+                text-align: center;
+            }
+            button{
+                background-color:royalblue;
+                padding: 8px;
+                border-radius: 6px;
+                border: steelblue;
+                font-weight: bold;
+                color: white;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="atas">
+      <h1>Menghitung Biaya Parkir</h1>
+      Masuk Parkir : <input type="number" value="" size="10" id="masuk"/>
+      <br/>
+      Keluar Parkir : <input type="number" value="" size="10" id="keluar"/>
+      <br/>
+      <button onclick="hitungParkir()">BIAYA PARKIR</button> : <span id="biaya"></span>
+    </div>
+    </body>
+</html>
