@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <script>
             function hitung(){
                 const PHI = 3.14;
@@ -38,17 +38,23 @@
                 font-weight: bold;
                 color: white;
                 width: 100px;
-}
+            }
+            button:hover {
+                background: darkblue;
+                text-decoration: none;
+            }
         </style>
-    </head>
-    <body>
+</head>
+<body>
     <div class="main">
        <h1>Menghitung Luas dan Keliling Lingkaran</h1>
        Masukkan jari-jari Lingkaran :
        <input type="number" value="" size="10" id="bil1"/>
        <br/>
        <button onclick="hitung()">Hitung</button>
-       <br/> Hasil : <span id="hasil"></span>
+       <br/> Hasil : 
+       <br>
+       <span id="hasil"></span>
     </div>
-    </body>
+</body>
 </html>

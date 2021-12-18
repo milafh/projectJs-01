@@ -11,15 +11,18 @@
                 const TARIF_AKHIR = 1000; //perjam berikutnya
                 if(selisih <= 2){
                     biaya = TARIF_AWAL;
-                }else{
+                }
+                else{
                     let tambahan_jam = selisih - 2;
-                    biaya = TARIF_AWAL + (TARIF_PERJAM * tambahan_jam);
+                    biaya = TARIF_AWAL + (TARIF_AKHIR * tambahan_jam);
                 }
                 let area_biaya = document.getElementById("biaya");
-                area_biaya.innerHTML = "BIAYA PARKIR" + biaya;
-            }
+                area_biaya.innerHTML = "Rp." + biaya;
+                }
         </script>
+
         <title>Biaya Parkir</title>
+
         <style>
             body{
                 background-color: palevioletred;
@@ -41,18 +44,24 @@
                 border: steelblue;
                 font-weight: bold;
                 color: white;
-                width: 100px;
+                width: 200px;
             }
+
+            button:hover{
+                background-color: darkslateblue;
+                text-decoration: none;
+            }
+
         </style>
     </head>
     <body>
         <div class="atas">
       <h1>Menghitung Biaya Parkir</h1>
-      Masuk Parkir : <input type="number" value="" size="10" id="masuk"/>
+      Jam Masuk Parkir : <input type="number" value="" size="10" id="masuk"/>
       <br/>
-      Keluar Parkir : <input type="number" value="" size="10" id="keluar"/>
-      <br/>
-      <button onclick="hitungParkir()">BIAYA PARKIR</button> : <span id="biaya"></span>
+      Jam Keluar Parkir : <input type="number" value="" size="10" id="keluar"/>
+      <hr/>
+      <button onclick="hitungParkir()" >BIAYA PARKIR ANDA SEBESAR </button> : <span id="biaya"></span>
     </div>
     </body>
 </html>
